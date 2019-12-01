@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.dist
+.DS_Store
+.idea
+
+# Ignore directories and files from use of docker
+/app
+/sites/*/symfony.conf
+/data-mysql

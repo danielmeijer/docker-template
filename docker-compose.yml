@@ -1,0 +1,46 @@
+version: '3'
+
+#
+# Services definition
+#
+services:
+  nginx:
+    build: ./services/nginx
+    ports:
+      - "${NGINX_PORT}:80"
+      - "${NGINX_SSL_PORT}:443"
+    volumes:
+      - ${APP_PATH}:/var/www
+      - ./sites/${TARGET}${SSL}:/etc/nginx/conf.d
+    networks:
+      - backend
+    depends_on:
+      - php
+  php:
+    build: ./services/php/${PHP_VERSION}
+    volumes:
+      - ${APP_PATH}:/var/www
+    networks:
+      - backend
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    env_file: .env
+    volumes:
+      - ./data-mysql:/var/lib/mysql
+    networks:
+      - backend
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+     - "${PHPMYADMIN_PORT}:80"
+    environment:
+      PMA_HOST: mysql
+    networks:
+      - backend
+
+#
+# Networks definition
+#
+networks:
+  backend:
+    driver: bridge
