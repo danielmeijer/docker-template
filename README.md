@@ -26,11 +26,11 @@
 
 ## Documentation
 
-- [Docker Useful docker commands](./manuals/DOCKER.md)
-- [PHP](./manuals/PHP.md)
-  - [PHPMyAdmin](./manuals/PHPMYADMIN.md)
-  - [Composer basic usage](./manuals/Composer-basic-usage)
-- [Symfony Docs](./manuals/SYMFONY.md)
-- [SSL](./manuals/SSL.md)
-- [Environment variables](./manuals/ENV_VAR.md)
-- [Cleaning](./manuals/CLEANING.md)
+- [Docker Useful docker commands](./docs/DOCKER.md)
+- [PHP](./docs/PHP.md)
+  - [PHPMyAdmin](./docs/PHPMYADMIN.md)
+  - [Composer basic usage](./docs/Composer-basic-usage)
+- [Symfony Docs](./docs/SYMFONY.md)
+- [SSL](./docs/SSL.md)
+- [Environment variables](./docs/ENV_VAR.md)
+- [Cleaning](./docs/CLEANING.md)
